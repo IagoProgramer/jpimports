@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loja — JP Imports</title>
+
+  <!-- inline early theme apply to avoid flash -->
+  <script>
+    (function(){
+      try{
+        const saved = localStorage.getItem('jp_theme');
+        const preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && preferDark)) document.documentElement.classList.add('dark');
+      }catch(e){}
+    })();
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand"><a href="index.html"><img src="/header_logo.png" alt="JP Imports" class="logo" /></a></div>
+      <nav class="top-actions"><div class="main-nav"><a class="nav-link" href="index.html">Início</a><a class="nav-link" href="shop.html">Loja</a><a class="nav-link" href="about.html">Sobre</a></div><div class="actions-right"><button id="cartBtn" class="btn subtle">Carrinho <span id="cartCount">0</span></button><button id="themeToggle" class="btn subtle">🌙</button><a class="btn primary" href="https://wa.me/5514997788691" target="_blank">Fale no WhatsApp</a></div></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>Loja — Catálogo Completo</h2>
+        <p>Todos os produtos disponíveis com fotos, descrições e opções de compra via WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <!-- products loaded by the same app.js; this page focuses on shop layout -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>JP Imports • Perfumes Árabes • Envio para todo o Brasil</p>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js" defer></script>
+</body>
+</html>
